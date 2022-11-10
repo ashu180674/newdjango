@@ -7,3 +7,5 @@ def index(request):
 
 def about(request) :
     return HttpResponse('about this page')
+def services(request):
+    return HttpResponse('at your service')
