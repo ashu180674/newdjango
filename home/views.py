@@ -11,12 +11,16 @@ def index(request):
     return render(request,'index.html', context)
 
 def aboutus(request) :
-    return HttpResponse('about this page')
+    return render(request,'aboutus.html')
+
 def services(request):
-    return HttpResponse('at your service')
+    return render(request,'services.html')
 
 def contactus(request):
-    return HttpResponse("dail +916232296539")
+    return render(request,'contactus.html')
 
 def icecream(request):
     return render(request,'icecream.html')
+
+def home(request) :
+    return render(request,'home.html')
