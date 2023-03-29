@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uzn+!w!12lq&1yikcfc&wd=3p^2!$vdvv*)$n8#pkzn+uy1zkv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'hello.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'postgresuser',
+        'PASSWORD': 'postgres6969',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -117,6 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -124,10 +130,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#manually adding code
-
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    
-]
+#manually adding co
